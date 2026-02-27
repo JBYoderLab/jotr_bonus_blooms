@@ -1,0 +1,165 @@
+Modeling and attributing out of season "bonus blooms" by Joshua trees
+=====================================================================
+
+Need to port in a project description and earlier notes from General.
+
+
+
+
+
+2026.02.12
+----------
+
+Have got prediction going from fitted model; after modeling based on (1) only months 1-6 ("norm"), (2) all year (all), and (3) only months 7-12 ("fall") to provide illustrative comparison partials. Started running prediction with "norm" model, and I think that's partially right ... I want
+
+- Can use the "norm" and "all-year" models to predict flowering in months 1-7 in 2018 and 2025 --- that is, check against real observations
+- Then, use all-year model to predict recent (1996-2025) and early-20th-century (1901-1930) out-of-season blooms, see whether they've changed in frequency --- that's our first pass at "attribution"
+
+
+2026.02.13
+----------
+
+OKAY, first big question answered. I've compared predictive power of the "normal season" and "all year" models *specifically* for flowering activity in months 7-12, what I'm calling "anomalous." The two models use the same three predictors: day length, max temp, and precip. If I match up observed flowering activity records in months 7-12, 2008-2025 with predicted Pr(flowering) for each model:
+
+Normal season model t-test, observed no flowering vs observe flowering
+
+```
+	Welch Two Sample t-test
+
+data:  prFlr by flr
+t = 2.2352, df = 50.699, p-value = 0.02984
+alternative hypothesis: true difference in means between group FALSE and group TRUE is not equal to 0
+95 percent confidence interval:
+ 0.002664043 0.049720809
+sample estimates:
+mean in group FALSE  mean in group TRUE 
+          0.1483886           0.1221962 
+```
+
+All-year model t-test, ditto:
+
+```
+	Welch Two Sample t-test
+
+data:  prFlr by flr
+t = -7.1992, df = 48.145, p-value = 3.583e-09
+alternative hypothesis: true difference in means between group FALSE and group TRUE is not equal to 0
+95 percent confidence interval:
+ -0.13387662 -0.07542616
+sample estimates:
+mean in group FALSE  mean in group TRUE 
+         0.01784985          0.12250124 
+```
+
+And calculating AUCs for classified fitted values, the normal-season model has AUC=0.4
+
+
+2026.02.21
+----------
+
+Call with CJC re: bonus bloom attribution
+
+> I want to do it fast
+
+CJC has a new Chris (Callahan) for attribution layers; he'll need to (1) check intuition and (2) find out what he can do.
+
+Talking model strategy ... Do we need to train an all-year model with the anomalous-bloom observations pulled?
+
+Try Leave-One-Out, training models on all-year MINUS one fall; then predict fall activity in the left-out fall. Then, perhaps, visualize outcomes as LOO-predicted rangewide mean Pr(Flowering) for each year --- *should* see spikes in 2018 and 2025.
+
+Then, two counterfactuals --- simply use early-20th-c baseline, OR, use a proper counterfactual. If counterfactual:
+- two data sources; DA-MIP climate model runs that provide historical "natural" runs up to 2020; only 4 models past 2020
+- would need to roll my own counterfactual, via (1) detrending weather data; or (2) run a forecast model as a hindcast
+- *somewhere* there's a file with anthropogenic warming levels estimated --- for PRISM data
+	- Chapland? Temple ... Collazo
+	- need to calibrate local temp anomaly to subtract out the anomaly
+- but PRECIPITATION is a different beast --- "story line" attribution
+	- Callahan modeling Great Flood of CA, 1850s
+	- skip over the *probability* of the event, but ask about what kind of conditions *would give you* the event --- then put anthropogenic change back in
+- CJC suggests both ... trend-based is basically bias-correcting
+	- probabilistic DAMIP through 2020
+	- storyline thing, might take longer
+- *Could* do a rapid-response paper "with the model" while also looking into formal attribution
+
+> okay Chris C is in; conversation ongoing, sounds like probabilistic is the way
+> "one of the first ecosystem attributions ever done"
+
+
+2026.02.22
+----------
+
+Lotta coding business but have worked out that I need to fit a LOO model leaving out fall of each year in the data set (2008-2025, 18 years) and then predict to *every* year (2008-2025, 18 years) so that's 18x18x12 = 3888 monthly prediction files LMAooo
+
+
+2026.02.23
+----------
+
+Worked up a visualization of LOO testing results and ... it's bad! LOO_monthly_flowering.pdf
+
+EVERY year we get a big spike in area with predicted flowering during the regular flowering months and ALSO, from some models, a spike in area with predicted flowering in months 7-12. So it's fucked, first, that these spikes do not appear to vary from year to year; and it's additionally fucked that the LOO 2018 and LOO 2025 models do not appear to find spikes in months 7-12.
+
+I need to rethink this model *from scratch*.
+
+Well; 2200h and I have built a better raw data visual but I have NOT figured out how I want to tackle this better.
+
+Brenskelle et al modeled with GDD + ppt + daylen, found 120-day prior periods worked marginally better.
+
+
+2026.02.24
+----------
+
+Convo with CJC: we both think using day length is bad. 
+
+What if ... *we drop day length and use an RI effect for month*?
+
+N.b. new LOO can just drop the 2018/2025 to check, is what we learn from the Big LOO Run.
+
+Okay, have more or less pivoted to RI; with the annoying constraint that dbarts doesn't provide a way to do partial dependence plots from rbarts objects. Top predictors end up being precip then tmax, and the RI has a clear peak in months 3-4, with a drop below baseline in summer and a climb back upwards in months 10-12. Running LOOs now, and gonna go run myself because [gah].
+
+Hahaha oh my GOD. I fucked up loop-counter variables. So ALL previous LOO predictions were doing repeated prediction to the same year as the LOO, but *labeling them as 2008-2025*. 
+
+Okay, huzzah, that stands *very* likely to fix this. But running with the RI model now anyway ...
+
+Concluded that this did do the trick, worked up a new visualization (predicted prop range with flowering vs prop records showing flowering) --- and LOO shows the censored training sets don't impact recovering of autumn blooms. BUT ... I'm still not recovering the big year-to-year swings in flowering intensity, variation is from 75% to 80% of total range.
+
+
+2026.02.25
+----------
+
+Okay, new predictor sets to try and tackle this. Going in with:
+- Tmin, Tmax, Tmean, PPT
+- for 2 months prior, 3-4 months prior, and 5-6 months prior
+
+No, talked it over with CJC. New strategy is
+- compile at the *quarterly*, not monthly level (larger samples, less distortion of flowering frequency)
+- predictors aggregated at Q-of-obs, then the four Qs prior
+- Tmin, Tmax, Tmean, PPT
+- keep RI strategy, I think, because now day length is getting pretty meaningless but we do want *something* to account
+
+Partials for a new model with this strategy look MUCH better; precip in Q4 (fully a year before observation) is a strong predictor and indeed it has a negative relationship with flowering.
+
+
+2026.02.26
+----------
+
+LOO analysis and comparison to observed looks a LOT better; recovers bad flowering years in 2017, 2020, 2021. But starts to look very consistent in earlier years when there's worse sampling. Have a message pending with CJC proposing to use only data from 2016 on, which would be a decade of observations and maybe the best-resolved variation anyway.
+
+Okay, making that change, gonna work with it going forward ...
+
+First-pass results: the LOO looks good; some quick summarization of a 1901-30 and 1996-2025 comparison is ... complex. The early period has higher average area with predicted flowering in the autumn quarters (Q3 & Q4) ... but the recent period has more years in which area with predicted autumn flowering is above 5% of the range.
+
+```
+# A tibble: 7 × 7
+# Groups:   year [7]
+   year quarter   tot tot_flr freq_flr season era      
+  <dbl>   <dbl> <int>   <int>    <dbl> <fct>  <chr>    
+1  1918       4  4718    1520   0.322  Autumn 1901-1930
+2  1930       4  4718     348   0.0738 Autumn 1901-1930
+3  1996       4  4718     349   0.0740 Autumn 1996-2025
+4  2000       4  4718     509   0.108  Autumn 1996-2025
+5  2018       4  4718     553   0.117  Autumn 1996-2025
+6  2021       4  4718     485   0.103  Autumn 1996-2025
+7  2025       4  4718    1132   0.240  Autumn 1996-2025
+```
+
+
