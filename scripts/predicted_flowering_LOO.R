@@ -285,7 +285,7 @@ ggplot() +
 	geom_line(data=LOOsumm, aes(x=ymd(paste(year, month, 14)), y=FreqFlr, group=LOOyear, color=factor(LOOyear)), alpha=0.75, linewidth=0.75) +
 	scale_color_manual(values=c("blue", "orange"), name="LOO year") + 
 	scale_fill_manual(values=c("#66c2a4"), name="Prop records\nflowering") + 
-	labs(x="Date", y="Prop. range with flowering predicted\n or cells with flowering observed", title="Modeled monthly flowering") +
+	labs(x="Date", y="Prop. range with flowering predicted\n or cells with flowering observed", title="Modeled quarterly flowering") +
 	theme_bw() +
 	theme(legend.position="inside", legend.position.inside=c(0.8,1.1), legend.text=element_text(lineheight=0.8), legend.key.height=unit(3, "mm"), legend.direction="horizontal")
 

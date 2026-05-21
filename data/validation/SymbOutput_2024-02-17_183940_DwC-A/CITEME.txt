@@ -1,0 +1,6 @@
+This data package was downloaded from a TORCH Portal Portal on 2024-02-17 18:39:41.
+
+Please use the following format to cite this dataset:
+Biodiversity occurrence data published by: TORCH Portal (accessed through the TORCH Portal Portal, https://portal.torcherbaria.org/portal, 2024-02-17).
+
+For more information on citation formats, please see the following page: https://portal.torcherbaria.org/portal/includes/usagepolicy.php

@@ -3,8 +3,22 @@ Modeling and attributing out of season "bonus blooms" by Joshua trees
 
 Need to port in a project description and earlier notes from General.
 
+Project notes for a first-attempt attribution study of Joshua tree flowering. Spurred by the [2025 "bonus bloom"](https://lab.jbyoder.org/2025/12/10/weird-wet-weather-has-joshua-trees-flowering-early-or-late-help-the-yoder-lab-map-this-bonus-bloom-to-understand-why/), in which we're seeing Joshua trees (western for sure, maybe also eastern?) flowering in early November following a cool spell and unseasonable rain events. This parallels a 2018-19 bloom anomaly previously analyzed by [Brenskelle et al (2021)](https://doi.org/10.1038/s41598-021-00265-y). 
+
+The plan is to rally iNaturalist contributors to get best possible observation of the phenomenon, and ready analyses to run on the data quickly, when the regular flowering season begins and we can treat the observation of the anomaly as complete. We can relatively easily (I think) port in the analysis that Brenskelle *et al* did previously, but now with two anomalous years to calibrate from; and then see what things look like under simulated "no climate change" baselines. Colin Carlson is (once again) a point person for this, and I've reached out to Vijay Barve at the LA NHM, who was on that earlier paper. Also (re-)reading [Dudney *et al* (2025)](https://doi.org/10.1111/ele.70192) on causal inference in ecology.
 
 
+2025.12.16
+----------
+
+Vijay Barve is on board for Joshua tree bonus bloom attribution analysis, set a plan to check in after the holiday break; and Colin Carlson says it's do-able, though will need another person roped in, could be moderately high-profile. (Nat Comms?? but maybe that's the change-in-frequency attribution not the change-in-timing attribution?) I need to (re)-read that perspective on attribution in ecology.
+
+Setting up project folder and initial stuff, with a fork of my project template.
+
+Also (re-)reading [Dudney *et al* (2025)](https://doi.org/10.1111/ele.70192) on causal inference in ecology, notes:
+- they're all in on causal inference as the framework, do I believe that's necessary?
+- discussion of multiple methods for generating counterfactuals (Fig 2), which might let me do the thing from bespoke input? Certainly looks like stuff I know how to do ...
+- honestly some of it looks a lot like what we already did in the 2024 paper, comparing a historic "baseline" to current conditions ...
 
 
 2026.02.12
@@ -163,3 +177,142 @@ First-pass results: the LOO looks good; some quick summarization of a 1901-30 an
 ```
 
 
+2026.03.24
+----------
+
+JT attribution call!
+
+Chris Callahan, CJC --- 
+
+Talked through the question and the current model structure; CC knows a couple ways to tackle creation of counterfactuals --- basically deriving an adjustment to PRISM data for a "no climate change" model
+
+CJC: can try to attribute both the 2025 bonus bloom AND try to attribute changing frequency of weird precip anomalies --- are high precip totals in Q4 more likely under climate change? is *average* higher? are *extreme events* more common?
+
+CC: OR can try to "detrend" and recalculate --- but that's (IHO) inferior; OR have to think about ENSO extremes; or there's now really good model-based weather forecasting --- but that's a much more timeframe-limited approach because forecasts run for ... 10 days.
+
+Mallory Harris Dengue paper
+
+Thinking about logistics ... climate models work at much coarser scale, like 1.5 degrees/ 150km, which is salvageable in the interaction with 4km PRISM rasters.
+
+HEY okay this is great. CC will get me the layers for "climate change signal" that I can use to adjust PRISM predictors, and there's our counterfactual.
+
+
+2026.04.10
+----------
+
+And, CC has delivered "climate change deltas"
+
+
+2026.04.13
+----------
+
+Unpacked the delta layers, hitched them up to model prediction, and built a fresh visual and ... there's basically no climate change effect! Predicted flowering from the counterfactual basically matches predictions from actual weather, 2016-2025 and in both anomaly quarters (Q4 of 2018 and 2025). This scans --- 3 of 6 predictors are precipitation, and the precipitation deltas are *tiny*, magnitude < 20mm. 
+
+Moving on to (1) some more discussion of venues and (2) what we can do to produce some estimation of uncertainty (probably disaggregate CMIP models, right now I'm just averaging the 10 Chris sent).
+
+
+2026.04.17
+----------
+
+Taking some Friday time to disaggregate the counterfactuals by GCM.
+
+### Zoom with CJC
+
+Shared the Overleaf, 
+
+Reviewers will react against a negative result; need some discussion on value of those, especially in attribution literature!
+
+Cite news coverage as basis for "many are asking"
+
+Fig 1 is model, Fig 2 is attribution result.
+
+Fig 1 is (a) organisms, (b) data overview, (c) predictor selection, (d) partials
+
+"Anomalous winter flowering is due to precip not temperature"
+
+> historical validation? demo of capturing year-to-year variation helpful
+
+"Thus, AWF not attributable to CC, which is changing temp more than precip"
+
+Fig 2
+- panel a is the data vs actual vs counterfactuals
+- plot actual minus counterfactual flowering freq by quarter, with zero line
+- model uncertainty is gonna be a thing in review
+
+> take 100 draws from posterior, *extract the uncertainty from `predict()`* to get CI
+> then on lower plot, shade quarters for which CI is sign. diff. from 0
+> see whether CC deviation is sign diff in Q4 2018, Q4 2025
+
+visualization of recent weather to highlight anomalous precip
+
+Supp Fig with GCM deltas 
+
+
+2026.04.20
+----------
+
+Spent yesterday afternoon assembling a pretty good flowering-over-season figure (monthly freq of flowering) to highlight the anomaly years. Next move is to disaggregate posteriors in predictions from actual and counterfactual data ...
+
+
+2026.04.21
+----------
+
+Got, I think, all my disaggregations. Checked in with CJC and the plan is now that I need to engineer the comparisons. It's gonna be, for each model instance in the posterior (300 of them), the difference between predictions from actual data and each of the 10 counterfactuals.
+
+
+2026.04.23
+----------
+
+Bit of a detour because I'd mucked up the per-tree estimate extractions (needed to `pnorm()`, I confess I'm not sure why) but I have them now, bwahaha. (Or will when I re-run all the individual gcm predictions, LOLsob.
+
+
+2026.04.29
+----------
+
+Got it solved! Can now assemble the two figures.
+
+
+2026.05.05
+----------
+
+Pushed through and built a bloody amazing Figure 1. We're set to go, I think?
+
+
+2026.05.09
+----------
+
+Working late on validation records; good news is a lot of them are applicable between NPN and herbarium records. BUT... AHH nuts I don't have anything predicted from 1929--1996, because I was just doing early-recent comparisons. That's gonna take another round of coding.
+
+
+2026.05.11
+----------
+
+Bunged out new prediction layers for all years from 1900 on; now comparing to validation records. It's ... iffy. Got 8 records for which herbaria/npn say there were out of season flowers but the model doesn't. I'm going to look at those individually ...
+
+```
+filter(npn, year(ymd(Observation_Date))==2015, month(ymd(Observation_Date))>=6, grepl("flower", Phenophase_Description), Phenophase_Status==1) 
+```
+
+Okay yep those check out!
+
+TORCH: ASU0101325 Q3 1973 --- And okay, the one TORCH record is dated Aug 29, 1973; it has *fruits*, some of them pretty small, but no flowers. Card says "fruits powdery, light tan in color, basal stems solidary [sic]" --- I'd coded that as flowering *for the year* but it's not for the quarter. This may get me further in trouble, let's see...
+
+CCH: CHSC026995 Q3 1973 --- This is from the same collection as the one TORCH record; and ... it has A flower, OMG.
+
+CCH: CSLA000667 Q3 1973 --- OMG this is a *third*. Also no flowers, only fruit.
+
+CCH: RSA0172732 Q3 1969 --- Actually fruits only.
+
+CCH: UC718156 Q4 1935 --- Actually fruits only.
+
+CCH: UC729522 Q3 1932 --- Actually fruits only.
+
+And I'm realizing as I think about this more, in all three cases we're just dealing with a radically different detection threshold than iNat.
+- The 1973 record: one guy took 3 duplicate specimens from the same tree and only included one flower across all three sheets
+- The two 2015 records: in both cases they're the only tree out of dozens at the same NPN site that have flowers recorded
+
+
+2026.05.12
+----------
+
+Think we're set to move forward with writing; emailed CC and CJC to, I hope, find a time next week before Eurotrip.

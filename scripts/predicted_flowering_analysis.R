@@ -1,7 +1,7 @@
 # Analyzing predicted historical flowering in Joshua tree
 # next-level model consistency check, "LOO"
 # Assumes local environment
-# jby 2026.02.26
+# jby 2026.04.13
 
 # starting up ------------------------------------------------------------
 
@@ -45,6 +45,8 @@ table(flow$year, flow$quarter)
 
 # raster files of predicted prFL
 pred.files <- list.files("output/models/RIBART_all_year_predictions", pattern=".tiff", full=TRUE)
+cf.files <- list.files("output/models/RIBART_counterfactual_predictions", pattern=".tiff", full=TRUE)
+
 
 # useful bits and bobs
 MojExt <- extent(-120, -112, 33, 39) # Mojave extent, maybe useful
@@ -157,8 +159,6 @@ wilcox.test(freq_flr~era, filter(pred.flr.ESsumm, season=="Autumn"), alternative
 pred.flr.ESsumm |> group_by(era, season) |> summarize(mdFlrFrq = median(freq_flr), mnFlrFrq = mean(freq_flr), NgtMin=length(which(freq_flr>0.05)))
 
 
-
-
 {cairo_pdf("output/figures/pred_quarterly_flr_freq_by_year.pdf", width=6, height=4)
 
 ggplot(pred.flr.summ, aes(x=ymd(paste(year,plotmonth, "14")), y=freq_flr, group=year, color=year<1995)) +
@@ -175,5 +175,8 @@ dev.off()
 pred.flr.summ.summ <- pred.flr.summ |> mutate(norm.season=month<7, period=ifelse(year<1995, "early", "recent")) |> group_by(period, norm.season) |> summarize(mnPropFlr = mean(freq_flr, na.rm=TRUE), mdPropFlr = median(freq_flr, na.rm=TRUE), yrs_w_flr=length(which(freq_flr>0.001))/6)
 
 pred.flr.summ.summ
+
+
+
 
 

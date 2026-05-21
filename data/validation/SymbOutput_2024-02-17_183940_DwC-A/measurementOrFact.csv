@@ -1,0 +1,7 @@
+coreid,measurementType,measurementTypeID,measurementValue,measurementValueID,measurementUnit,measurementDeterminedDate,measurementDeterminedBy,measurementRemarks
+1031079,"Phenology (ver 1.0)",http://purl.org/nevp/vocabulary/reproductive-phenology#01,reproductive,http://purl.org/nevp/vocabulary/reproductive-phenology_1.3#03,,2017-04-13T21:20:10Z,egbot,
+2059367,"Phenology (ver 1.0)",http://purl.org/nevp/vocabulary/reproductive-phenology#01,reproductive,http://purl.org/nevp/vocabulary/reproductive-phenology_1.3#03,,2022-02-07T13:46:33Z,egbot,
+5778850,"Phenology (ver 1.0)",http://purl.org/nevp/vocabulary/reproductive-phenology#01,reproductive,http://purl.org/nevp/vocabulary/reproductive-phenology_1.3#03,,2017-04-13T21:07:13Z,egbot,
+1031079,"Phenology: reproductive",http://purl.org/nevp/vocabulary/reproductive-phenology#03,flowering,http://purl.org/nevp/vocabulary/reproductive-phenology_1.3#06,,2017-04-13T21:20:11Z,egbot,
+2059367,"Phenology: reproductive",http://purl.org/nevp/vocabulary/reproductive-phenology#03,fruiting,http://purl.org/nevp/vocabulary/reproductive-phenology_1.3#11,,2022-02-07T13:46:33Z,egbot,
+5778850,"Phenology: reproductive",http://purl.org/nevp/vocabulary/reproductive-phenology#03,flowering,http://purl.org/nevp/vocabulary/reproductive-phenology_1.3#06,,2017-04-13T21:07:26Z,egbot,

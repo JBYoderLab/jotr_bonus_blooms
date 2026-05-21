@@ -1,0 +1,68 @@
+Intensity_Category_ID,Intensity_Category_Name,Intensity_Question,Intensity_Value_Options
+10,Frog vocalizing,What is the intensity of vocalizing?,Single calls: There is space between calls and individuals can be counted.; Overlapping calls: Calls of individuals can be distinguished but there is some overlapping of calls.; Full chorus: Calls are constant and overlapping.
+11,Breaking leaf buds,How many buds are breaking?,Less than 3; 3 to 10; More than 10
+12,Leaf canopy fullness,What proportion of the canopy is full with leaves?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+13,Leaf size,What proportion of full size are most leaves?,25-49%; 50-74%; 75-94%; 95% or more; Less than 25%
+14,Colored leaf proportion,What proportion of the canopy is still full with green leaves?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+15,Young leaves present,How many young leaves are present?,Less than 3; 3 to 10; More than 10
+16,Young needles present,How many young needles are present?,Less than 3; 3 to 10; More than 10
+17,Emerging needles,How many needles or needle bundles are emerging?,Less than 3; 3 to 10; More than 10
+18,Young needle bundles present,How many bundles have young needles?,Less than 3; 3 to 10; More than 10
+19,Needle canopy fullness,What proportion of the canopy is full with needles?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+20,Colored needle proportion,What proportion of the canopy is still full with green needles?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+21,Initial growth of buds or shoots,How many buds or shoots have initial growth?,Less than 3; 3 to 10; More than 10
+22,Initial growth of shoots,How many shoots have initial growth?,Less than 3; 3 to 10; More than 10
+23,Fruits present,How many fresh fruits are present?,Less than 3; 3 to 10; More than 10
+24,Ripe fruits present,How many fruits are ripe?,Less than 3; 3 to 10; More than 10
+25,Recent fruit drop,How many mature fruits have dropped?,Less than 3; 3 to 10; More than 10
+26,Unripe seed cones present,How many seed cones are unripe?,Less than 3; 3 to 10; More than 10
+27,Ripe seed cones present,How many seed cones are ripe?,Less than 3; 3 to 10; More than 10
+28,Recent seed cone drop,How many mature seed cones have dropped seeds or have completely dropped from the plant?,Less than 3; 3 to 10; More than 10
+29,Open flowers,How many fresh flowers are open?,Less than 3; 3 to 10; More than 10
+30,Pollen release of flowers,How many flowers release pollen?,Less than 3; 3 to 10; More than 10
+31,Open flowers (peak),How many fresh flowers are open?,Less than 3; 3 to 10; More than 10; Peak flower: The plant has a large number of flowers and one half (50%) or more are open and still fresh.
+32,Pollen release of flowers (peak),How many flowers release pollen?,Less than 3; 3 to 10; More than 10; Peak pollen: The plant has a large number of flowers and one half (50%) or more release pollen.
+33,Open pollen cones (peak),How many fresh pollen cones are open?,Less than 3; 3 to 10; More than 10; Peak opening: One half (50%) or more of the pollen cones on the plant are open and still fresh.
+34,Pollen release of cones (peak),How many cones release pollen?,Less than 3; 3 to 10; More than 10; Peak pollen: One half (50%) or more of the pollen cones on the plant release pollen.
+35,Flowers or flower heads present,How many fresh flowers or flower heads are present?,Less than 3; 3 to 10; More than 10
+36,Pollen cones present,How many fresh pollen cones are present?,Less than 3; 3 to 10; More than 10
+37,Flower heads present,How many fresh flower heads are present?,Less than 3; 3 to 10; More than 10
+38,Plant greeness,What percentage of the plant is green?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+39,Breaking leaf buds (10000),How many buds are breaking?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+40,Leaf canopy fullness (dead branch),What percentage of the canopy is full with leaves? Ignore dead branches in your estimate.,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+41,Leaf size,What percentage of full size are most leaves?,25-49%; 50-74%; 75-94%; 95% or more; Less than 25%
+42,Colored leaf percentage,What percentage of the canopy is full with colored leaves?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+43,Young leaves present (10000),How many young leaves are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+44,Young needles present (10000),How many young needles are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+45,Emerging needles (10000),How many needles or needle bundles are emerging?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+46,Needle canopy fullness (dead branch),What percentage of the canopy is full with needles? Ignore dead branches in your estimate.,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+47,Colored needle percentage,What percentage of the canopy is full with colored needles? ,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+48,Flowers and flower buds (10000),"How many flowers and flower buds are present? For species in which individual flowers are clustered in flower heads, spikes or catkins (inflorescences), simply estimate the number of flower heads, spikes or catkins and not the number of individual flowers.","Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+49,Flowers and flower buds (1000),"How many flowers and flower buds are present? For species in which individual flowers are clustered in flower heads, spikes or catkins (inflorescences), simply estimate the number of flower heads, spikes or catkins and not the number of individual flowers.","Less than 3; 3 to 10; 11 to 100; 101 to 1,000; More than 1,000"
+50,Open flowers percentage (individual),"What percentage of all fresh flowers (buds plus unopened plus open) on the plant are open?  For species in which individual flowers are clustered in flower heads, spikes or catkins (inflorescences), estimate the percentage of all individual flowers that are open.",Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+51,Pollen release,How much pollen is released?,"Little: Only a few grains are released.; Some: Many grains are released.; Lots: A layer of pollen covers your palm, or a cloud of pollen can be seen in the air when the wind blows "
+52,Flower heads present (1000),How many fresh flower heads are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; More than 1,000"
+53,Open flowers percentage,What percentage of all fresh flowers (unopened plus open) on the plant are open? ,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+54,Pollen cones present (10000),How many fresh pollen cones are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+55,Open pollen cones percentage,What percentage of all fresh pollen cones (unopened plus open) on the plant are open? ,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+56,Fruits present (10000),How many fruits are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+57,Fruits present (1000),How many fruits are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; More than 1,000"
+58,Ripe fruit percentage,What percentage of all fruits (unripe plus ripe) on the plant are ripe? ,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+59,Recent fruit or seed drop (10000),How many mature fruits have dropped seeds or have completely dropped or been removed from the plant since your last visit?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+60,Recent fruit or seed drop (1000),How many mature fruits have dropped seeds or have completely dropped or been removed from the plant since your last visit?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; More than 1,000"
+61,Unripe seed cones present (10000),How many seed cones are unripe?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+62,Ripe seed cones present (10000),How many seed cones are ripe?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+63,Recent cone or seed drop (10000),How many seed cones have dropped seeds or have completely dropped or been removed from the plant since your last visit?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+64,New side branches (1000),How many new side branches are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; More than 1,000"
+65,Receptacles (1000),How many receptacles are present?,"Less than 3; 3 to 10; 11 to 100; 101 to 1,000; More than 1,000"
+66,Receptacles percentage,What percent of all receptacles on the plant are in this stage?,Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+67,Hexagenia mayfly emergence,What is the intensity of emergence?,"Slight: Less than 100 individuals are seen within the immediate observation area (approximately 5 feet in any direction).; Light: Between 100 and 500 individuals are seen within the immediate observation area (approximately 5 feet in any direction).; Moderate: Consistent coverage of surfaces is seen (ground, building walls and windows, vegetation, etc.), or small groups of individuals are seen under lights.; Heavy: Thick coverage of surfaces is seen, or very noticeable groups of individuals, including small to medium piles, are seen under lights.; Very heavy: Very thick coverage of surfaces is seen (with minimal surface area exposed), or large groups of individuals, including large piles, are seen under lights."
+68,Hexagenia mayfly death,What is the intensity of death?,"Slight: Less than 100 individuals are seen within the immediate observation area (approximately 5 feet in any direction).; Light: Between 100 and 500 individuals are seen within the immediate observation area (approximately 5 feet in any direction).; Moderate: Consistent coverage of surfaces is seen (ground, building walls and windows, vegetation, etc.), or small groups of individuals are seen under lights.; Heavy: Thick coverage of surfaces is seen, or very noticeable groups of individuals, including small to medium piles, are seen under lights.; Very heavy: Very thick coverage of surfaces is seen (with minimal surface area exposed), or large groups of individuals, including large piles, are seen under lights."
+69,Young needle bundles present (10000),"How many bundles with young needles are present?","Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+70,Emerging needle bundles (10000),"How many needle bundles are emerging?","Less than 3; 3 to 10; 11 to 100; 101 to 1,000; 1,001 to 10,000; More than 10,000"
+71,Potential needle canopy fullness (dead branch),"What percentage of the potential canopy space is full with needles? Ignore dead branches in your estimate of potential canopy space.",Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+72,Potential needle canopy color (dead branch),"What percentage of the potential canopy space is full with non-green needle color? Ignore dead branches in your estimate of potential canopy space.",Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+73,Potential leaf canopy fullness (dead branch),"What percentage of the potential canopy space is full with leaves? Ignore dead branches in your estimate of potential canopy space.",Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+74,Potential leaf canopy color (dead branch),"What percentage of the potential canopy space is full with non-green leaf color? Ignore dead branches in your estimate of potential canopy space.",Less than 5%; 5-24%; 25-49%; 50-74%; 75-94%; 95% or more
+75,Courtship calling,What is the intensity of calling?,Single calls: There is space between calls and individuals can be counted.; Overlapping calls: Calls of individuals can be distinguished but there is some overlapping of calls.; Full chorus: Calls are constant and overlapping.
+77,,,

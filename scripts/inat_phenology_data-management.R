@@ -1,6 +1,6 @@
 # working with phenology-annotated iNat observations
 # Assumes local environment 
-# jby 2026.02.25
+# jby 2026.05.05
 
 # starting up ------------------------------------------------------------
 
@@ -229,7 +229,7 @@ write.table(flr.clim.daylen, paste0("output/flowering_freq_climate_", taxnum, ".
 flr.clim <- read.csv(paste0("output/flowering_freq_climate_", taxnum, ".csv"))
 glimpse(flr.clim)
 
-flr.clim.summed <- flr.clim %>% group_by(lat, lon) %>% summarize(tot_obs = sum(n_obs))
+flr.clim.summed <- flr.clim |> filter(year>=2016) |> group_by(lat, lon) |> summarize(tot_obs = sum(n_obs))
 glimpse(flr.clim.summed)
 
 library("rnaturalearth")
@@ -242,12 +242,12 @@ states <- ne_states(country="united states of america", returnclass="sf")
 countries <- ne_countries(scale=10, continent="north america", returnclass="sf")
 coast <- ne_coastline(scale=10, returnclass="sf")
 
-# get the USFS range polygon for toyon
-usfs.Range <- read_sf("../data/spatial/wpetry-USTreeAtlas-4999258/shp/photarbu/", layer="photarbu", crs=4326)
-usfs.buff <- st_transform(st_buffer(st_transform(usfs.Range, crs=3857), 10000), crs=4326) %>% st_intersection(filter(ne_countries(scale=10, continent="north america", returnclass="sf"), name_en=="United States of America")) # 10km buffer?
-broad.Range <- read_sf(paste0("output/broad_range_polygon_", taxon, ".shp"))
+sdm <- read_sf("../data/Yucca/Jotr_SDM2023_range/jotr_SDM2023_range_simple.shp")
 
-{cairo_pdf(paste("output/figures/record_distribution_map_", taxon, ".pdf", sep=""), width=3.2, height=4.5)
+statelabs <- data.frame(state=c("CA","NV","UT","AZ"), lon=c(-116.75,-115.75,-113.5,-113.45), lat=c(35.25,37.65,37.5,35.5))
+
+
+{cairo_pdf(paste("output/figures/record_distribution_map_", taxnum, ".pdf", sep=""), width=6, height=6)
 
 ggplot() + 
 
@@ -256,26 +256,42 @@ geom_sf(data=countries, fill="antiquewhite3", color="antiquewhite4") +
 geom_sf(data=states, fill="antiquewhite2", color="antiquewhite4") + 
 #geom_sf(data=filter(states, name=="California"), fill="cornsilk3", color="antiquewhite4") + 
 
-geom_sf(data=broad.Range, fill="darkseagreen3", color=NA, linewidth=0.3, linetype=2) + 
-geom_sf(data=usfs.buff, fill="darkseagreen4", color=NA, linewidth=0.3, linetype=2) + 
+geom_sf(data=sdm, fill='antiquewhite3', color=NA, linewidth=0.3, linetype=2) + 
+
+geom_text(data=filter(statelabs, state!="UT"), aes(label=state, x=lon, y=lat), color="white", size=20, alpha=0.75) +
 
 geom_tile(data=flr.clim.summed, aes(x=lon, y=lat, fill=log10(tot_obs))) + 
 
 geom_sf(data=states, fill=NA, color="antiquewhite4") + 
-	
-annotate("text", x=-119, y=36, label="CA", size=12, color="white", alpha=0.35) + 
-annotate("text", x=-117.5, y=40, label="NV", size=12, color="white", alpha=0.35) + 
-annotate("text", x=-117.9, y=35.1, label="Core range", size=4, fontface="bold", color="darkseagreen4") + 
-
-	
-scale_fill_gradient(low="#fde0dd", high="#49006a", name=expression(log[10]("iNat records")), breaks=c(0,1,2)) + 
+		
+scale_fill_gradient(low="#a1d99b", high="#00441b", name="Records per cell", breaks=c(0,1,2), labels=c(1, 10, 100)) + 
 labs(x="Longitude", y="Latitude") + 
 		
-coord_sf(xlim = c(-125.5,-115.5), ylim = c(32,42), expand = FALSE) +
+coord_sf(xlim = c(-119, -112.75), ylim = c(33.25, 38.25), expand = TRUE) +
+
+labs(x="Longitude", y="Latitude") +
+
 annotation_scale(location = "bl", width_hint = 0.3) + 
-annotation_north_arrow(location = "bl", which_north = "true", pad_x = unit(0.15, "in"), pad_y = unit(0.25, "in"), style = north_arrow_fancy_orienteering, height=unit(0.75, "in"), width=unit(0.5, "in")) +
+annotation_north_arrow(location = "bl", which_north = "true", pad_x = unit(0.15, "in"), pad_y = unit(0.25, "in"), style = north_arrow_fancy_orienteering, height=unit(1, "in"), width=unit(0.65, "in")) +
 	
-theme_minimal(base_size=12) + theme(legend.position="bottom", legend.key.width=unit(0.25, "inches"), legend.key.height=unit(0.1, "in"), legend.direction="horizontal", axis.text=element_blank(), axis.title=element_blank(), plot.margin=unit(c(0.01,0.1,0.01,0.01), "inches"), legend.box.spacing=unit(0.001,"inches"), legend.box="horizontal", legend.text=element_text(size=10), legend.title=element_text(size=12, margin=margin(0, 10, 0, 10, unit="pt")), panel.background=element_rect(fill="slategray3", color="black"), panel.grid=element_blank())
+theme_minimal(base_size=14) + 
+
+theme(legend.position="inside", 
+	  legend.position.inside=c(0.7,0.07), 
+	  legend.key.width=unit(0.3, "inches"), 
+	  legend.key.height=unit(0.1, "in"), 
+	  legend.direction="horizontal", 
+	  legend.box.spacing=unit(0.01,"inches"), 
+	  legend.box="horizontal", 
+	  legend.text=element_text(size=12), 
+	  legend.title=element_text(size=14, margin=margin(0,5,0,2, unit='mm')), 
+	  legend.background=element_rect(fill="white", color=NA),
+	  axis.text=element_blank(), 
+	  axis.title=element_blank(), 
+	  plot.margin=unit(c(0.01,0.01,0.01,0.01), "inches"), 
+	  panel.background=element_rect(fill="slategray3", color="black"), 
+	  panel.grid=element_blank()
+	  )
 
 }
 dev.off()

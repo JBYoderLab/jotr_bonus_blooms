@@ -1,0 +1,227 @@
+Phenophase_ID,Phenophase_Description,Phenophase_Definition_IDs,Phenophase_Names,Phenophase_Revision_Comments
+56,First leaf (3 locations),'56',First leaf,
+57,75% leaf elongation (trees),'57',75% leaf elongation,
+58,First flower (3 locations),'58',First flower,
+59,Last flower,'59',Last flower,
+60,First fruit ripe (3 locations),'60',First fruit ripe,
+61,50% of leaves colored,'61',50% of leaves colored,
+63,50% of leaves fallen,'63',50% of leaves fallen,
+71,Emergence above ground,'71',Emergence above ground,
+72,First flower (1 location),'72',First flower,
+73,First fruit ripe (1 location),'73',First fruit ripe,
+75,Full leaf (historic lilac/honeysuckle),"'75,411,422'","Full leaf out,Full leaf",1-1-2005; slight changes in wording. Prior to 2005; Eastern and Western programs ran concurrently with slightly different phenophase definitions.
+76,First leaf (historic lilac/honeysuckle),"'76,410,421'",First leaf,1-1-2005; changed from one location to three locations. Prior to 2005; Eastern and Western programs ran concurrently with slightly different phenophase definitions.
+77,First bloom (historic eastern lilac),"'77,423'",First bloom,1-1-2005; slight changes in wording.
+78,Full bloom (historic lilac/western honeysuckle),"'78,414,425'",Full bloom,1-1-2005; slight changes in wording. Prior to 2005; Eastern and Western programs ran concurrently with slightly different phenophase definitions.
+79,End bloom (historic lilac/eastern honeysuckle),"'79,415,427'",End bloom,1-1-2005; slight changes in wording. Prior to 2005; Eastern and Western programs ran concurrently with slightly different phenophase definitions.
+105,Budburst (conifer),'105',Budburst,
+106,First needles (conifer),'106',First needles,
+107,First male cone (conifer),'107',First male cone,
+108,First pollen released (conifer),'108',First pollen released,
+109,First needles fallen (conifer),'109',First needles fallen,
+121,First flower bud (1 location),'121',First flower bud,
+124,First fruit (1 location),'124',First fruit,
+127,"First leaf (evergreen, 3 locations)",'127',First leaf,
+128,75% leaf elongation (evergreen),'128',75% leaf elongation,
+137,"First leaf fallen (evergreen, 3 locations)",'137',First leaf fallen,
+180,>=75% of full leaf size (deciduous),"'180,533,559'",">75% of full leaf size,>=75% of full leaf size","For other Dataset_IDs, phenophase name and definition wording varies."
+181,>=50% of leaves colored (deciduous),"'181,527,534,560'","Autumn color,>50% of leaves colored,>=50% of leaves colored","For other Dataset_IDs, phenophase name and definition wording varies."
+182,All leaves colored (deciduous),"'62,182,535,561,580'",All leaves colored,"3-2-2009; no significant change but given a new definition ID #. For other Dataset_IDs, phenophase name and definition wording varies."
+183,>=50% of leaves fallen (deciduous),"'183,530,536,562'","Leaf fall,>50% of leaves fallen,>=50% of leaves fallen","For other Dataset_IDs, phenophase name and definition wording varies."
+184,All leaves fallen (deciduous),"'64,184,537,563,581'",All leaves fallen,"3-2-2009; no change but given a new definition ID #. For other Dataset_IDs, phenophase name and definition wording varies."
+186,Full flowering (50%),"'186,526,539,565,582'",Full flowering,"For other Dataset_IDs, phenophase name and definition wording varies."
+196,Full pollen release (angiosperms),'196',Full pollen release,
+200,All leaves withered (herbaceous and grasses),"'74,200'","All leaves senesced,All leaves withered",3-2-2009; slight change in phenophase name for clarity.
+201,Open flowers (1 location),"'201,583'",Open flowers,
+202,Ripe fruits (1 location),"'202,584'",Ripe fruits,
+205,Open flowers (lilac),'205',Open flowers,
+206,Full flowering (lilac),'206',Full flowering,
+207,End of flowering (lilac/honeysuckle),'207',End of flowering,
+210,Open flowers (honeysuckle),'210',Open flowers,
+211,Full flowering (honeysuckle),'211',Full flowering,
+221,Full pollen release (conifers),'221',Full pollen release,
+227,Ripe seeds (grasses),'227',Ripe seeds,
+232,Emerging leaves (1 location),'232',Emerging leaves,
+233,"Young unfolded leaves (evergreen, 1 location)",'233',Young unfolded leaves,
+256,Flower buds (1 location),'256',Flower buds,
+261,>=50% of needles colored (larch),'261',>=50% of needles colored,
+262,All needles colored (larch),'262',All needles colored,
+263,>=50% of needles fallen (larch),'263',>=50% of needles fallen,
+264,All needles fallen (larch),'264',All needles fallen,
+274,Adults on land,"'274,606'",Adults on land,
+275,Adults in water,"'275,607'",Adults in water,
+276,Vocalizing,"'276,608'",Vocalizing,
+277,Vocalizing at breeding site (frogs/toads),'277',Vocalizing at breeding site,
+278,Vocalizing away from breeding site (frogs/toads),'278',Vocalizing away from breeding site,
+279,Mating (amphibians),'279',Mating,
+280,Spermatophores (salamanders),'280',Spermatophores,
+281,Fresh eggs (amphibian),'281',Fresh eggs,
+282,Well-developed embryos (amphibian),'282',Well-developed embryos,
+283,Larvae in water (salamander),'283',Larvae in water ,
+284,Larvae in water (frog or toad),'284',Larvae in water ,
+285,Metamorphosing larvae in water (salamander),'285',Metamorphosing larvae in water ,
+286,Metamorphosing larvae in water (frog or toad),'286',Metamorphosing larvae in water ,
+287,Metamorphosing individuals on land (salamander),'287',Metamorphosing individuals on land,
+288,Metamorphosing individuals on land (frog or toad),'288',Metamorphosing individuals on land,
+289,Dead adults,"'289,612'",Dead adults,2019-02-05; removed phrase about roads.
+290,Individuals in a net,'290',Individuals in a net,
+291,Individuals in a trap,'291',Individuals in a trap,
+292,Live individuals,"'292,626'","Live individuals,Active individuals","2021-02-01; changed wording to include 'or heard' to clarify that unseen animals detected by sound should also be included, and changed name from 'Active individuals' to 'Live individuals' to avoid confusion about what 'active' means."
+293,Calls or song (birds),"'293,570,609'",Calls or song,
+294,Singing individuals (birds),"'294,576'","Singing individuals,Singing males",2017-02-05; changed wording to be inclusive of females.
+295,Territorial individuals (birds),'295',Territorial individuals,
+296,Mating (male on top),'296',Mating,
+297,Nest building (birds),'297',Nest building,
+298,Occupied nest,'298',Occupied nest,
+304,Nestlings (altricial birds),'304',Nestlings,
+308,Fledged young (altricial birds),'308',Fledged young,
+310,Fruit/seed consumption,'310',Fruit/seed consumption,
+311,Nut gathering,'311',Nut gathering,
+312,Flower visitation,'312',Flower visitation,
+313,Nonbreeding plumage (birds),'313',Nonbreeding plumage,
+314,Breeding plumage (birds),'314',Breeding plumage,
+315,Dead individuals,"'315,614'",Dead individuals,2019-02-05; removed phrase about roads.
+316,Dead nestlings or young (birds),"'316,616'",Dead nestlings or fledglings,2019-02-05; removed phrase about roads.
+318,Adults in freshwater,'318',Adults in freshwater,
+319,Adults in saltwater,'319',Adults in saltwater,
+320,Spawning (fish),'320',Spawning,
+321,Fry in water (freshwater-spawning fish),'321',Fry in water,
+322,Adults migrating upstream,'322',Adults migrating upstream,
+323,Adults migrating downstream,'323',Adults migrating downstream,
+324,Juveniles moving upstream (eels),'324',Juveniles moving upstream,
+326,Individuals on a hook,'326',Individuals on a hook,
+327,Adults,"'327,623'","Adults,Active adults","2021-02-01; changed wording to include 'or heard' to clarify that unseen animals detected by sound should also be included, and changed name from 'Active adults' to 'Adults' to avoid confusion about what 'active' means."
+330,Mating (lepidoptera),'330',Mating,
+331,Egg laying (on plant),"'331,618'",Egg laying,2020-02-17; changed wording to include 'or other surface' to allow for generalization beyond plant surfaces.'
+333,Caterpillars,"'333,624'","Caterpillars,Active caterpillars",2021-02-01; changed name from 'Active caterpillars' to 'Caterpillars' to avoid confusion about what 'active' means.
+336,Dead caterpillars,"'336,613'",Dead caterpillars,2019-02-05; removed phrase about roads.
+337,Individuals at a light,'337',Individuals at a light,
+338,Males vocalizing,'338',Males vocalizing,
+339,Male combat (horn/antler),'339',Male combat,
+340,Courtship ,'340',Courtship ,
+341,Mating,'341',Mating,
+342,Pregnant females,'342',Pregnant females,
+343,Recent birth (mammals),'343',Recent birth,
+344,Young individuals,'344',Young individuals,
+345,Cone cutting (primarily tree squirrels),'345',Cone cutting,
+346,Antler growth (ungulates),'346',Antler growth,
+347,Antler loss (ungulates),'347',Antler loss ,
+348,Antlers at full size (ungulates),'348',Antlers at full size,
+349,Egg laying (on water surface or aquatic plants),'349',Egg laying,
+350,Mating (odonates),'350',Mating,
+353,Recently emerged adults (insects),'353',Recently emerged adults,3-21-2011; terminated (for tiger beetles) because too difficult for beginners.
+354,Migrating adults (insect swarm),'354',Migrating adults,
+355,Individuals on land (rock/log),'355',Individuals on land,
+356,Individuals in water (rock/log),'356',Individuals in water,
+357,Adults vocalizing,'357',Adults vocalizing,
+358,Mating (reptiles),'358',Mating,
+359,Recent birth (reptiles),'359',Recent birth,
+360,Recent egg laying (reptiles),'360',Recent egg laying,
+361,Hatchling emergence (reptiles),'361',Hatchling emergence,
+362,Nesting (aquatic or marine turtles),'362',Nesting,
+363,Mating (one on top),'363',Mating,
+367,Larvae,"'367,627'","Larvae,Active larvae",2021-02-01; changed name from 'Active larvae' to 'Larvae' to avoid confusion about what 'active' means.
+370,Male adults,'370',Male adults,
+371,Breaking leaf buds,"'178,371,531,557,585,586,632'","Breaking leaf buds,Emerging leaves","2022-03-10; change in wording to clarify leaf base must be visible where it attached to petiole or stem, rather than petiole visible where it is attached to stem. 3-21-2011; changed terminology from 'emerging leaves' for clarity, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options. For other Dataset_IDs, phenophase name and definition wording varies."
+373,Breaking leaf buds (lilac/honeysuckle),"'203,373'","Breaking leaf buds,Emerging leaves",3-21-2011; changed terminology from 'emerging leaves' for clarity.
+374,All leaf buds broken (lilac/honeysuckle),"'204,374'","All leaf buds broken,All leaves emerged",3-21-2011; changed terminology from 'all leaves emerged' for clarity.
+390,Ripe fruits,"'187,390,529,540,566,587,588'","Ripe fruits on maple,Ripe fruits","3-21-2011; changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options. For other Dataset_IDs, phenophase name and definition wording varies."
+392,Unripe seed cones,'392',Unripe seed cones,
+393,Ripe seed cones,"'222,393'",Ripe seed cones,"3-21-2011; slight changes in wording for clarity, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options."
+395,Seed cones,'395',Seed cones,
+400,Unripe fruits,'400',Unripe fruits,
+412,First bloom (historic western lilac),'412',First bloom,
+416,End bloom (historic western honeysuckle),'416',End bloom,
+417,First red berry (historic western honeysuckle),'417',First red berry,
+418,Full red berries (historic western honeysuckle),'418',Full red berries,
+419,First shriveled berry (historic western honeysuckle),'419',First shriveled berry,
+420,Full shriveled berries (historic western honeysuckle),'420',Full shriveled berries,
+428,First bloom (historic honeysuckle),"'413,424,428'",First bloom,1-1-2005; slight changes in wording. Prior to 2005; Eastern and Western programs ran concurrently with slightly different phenophase definitions.
+429,Full bloom (historic eastern honeysuckle),"'426,429'",Full bloom,1-1-2005; slight changes in wording.
+440,Juveniles in saltwater,'440',Juveniles in saltwater,
+441,Young individuals (hatched from eggs),'441',Young individuals,
+442,Nest building (wood-nesting insect),'442',Nest building,
+443,Adults feeding (proboscis),'443',Adults feeding,
+444,Migrating adults (in uniform direction),'444',Migrating adults,
+445,Adults feeding,'445',Adults feeding,
+446,Feeding,'446',Feeding,
+447,Caterpillars feeding,'447',Caterpillars feeding,
+448,Dead or dying adults,"'325,448'",Dead or dying adults,3-21-2011; made a slight change in wording.
+449,Nymphs,"'449,628'","Nymphs,Active nymphs",2021-02-01; changed name from 'Active nymphs' to 'Nymphs' to avoid confusion about what 'active' means.
+450,Nymphs feeding,'450',Nymphs feeding,
+451,Dead nymphs,"'451,617'",Dead nymphs,2019-02-05;removed phrase about roads.
+452,Individuals on land,'452',Individuals on land,
+453,Individuals in water,'453',Individuals in water,
+454,Summer coat,'454',Summer coat,
+455,Winter coat,'455',Winter coat,
+456,Male combat (wrestling),'456',Male combat,
+457,Insect consumption,'457',Insect consumption,
+458,Individuals at a feeding station,"'317,458'","Individuals at a feeding station,Individuals at a feeder",3-21-2011; changed wording to include 'station' to allow for generalization beyond birds.
+467,Increasing leaf size,"'467,567'",Increasing leaf size,"For other Dataset_IDs, phenophase name and definition wording varies."
+468,Elongating stems,'468',Elongating stems,
+471,Falling leaves,"'471,569,589,622'",Falling leaves,"2021-02-01; addition in wording to clarify that only senescing leaves with leaf color should be included. For other Dataset_IDs, phenophase name and definition wording varies."
+472,Falling needles,"'472,631'",Falling needles,"2022-03-10; addition in wording to clarify that only senescing needles with leaf color should be included. For other Dataset_IDs, phenophase name and definition wording varies."
+480,Breaking needle buds (conifers),"'218,376,480'","Breaking needle buds,Emerging needles","2-28-2012; slight changes in wording for clarity. 3-21-2011; changed terminology from 'emerging needles' for clarity, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options."
+481,Breaking needle buds (deciduous),"'259,377,481'","Breaking needle buds,Emerging needles","2-28-2012; slight changes in wording for clarity. 3-21-2011; changed terminology from 'emerging needles' for clarity, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options."
+482,Initial growth (forbs),"'198,378,482'","Initial growth,Emerging growth",2-28-2012; slight changes in wording for clarity. 3-21-2011; changed terminology from 'emerging' for clarity.
+483,Leaves,"'179,379,483,525,532,541,558,590,591,592,593,633'","Leaves,Unfolded leaves","2022-03-10; change in wording to clarify leaf base must be visible where it attached to petiole or stem, rather than petiole visible where it is attached to stem. 3-10-2015; minor addition in wording for clarity. 2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion, changed from 'in at least 3 locations' on plant to 'one or more' and added percentage options for canopy fullness. For other Dataset_IDs, phenophase name and definition wording varies."
+484,Young leaves (tree/shrub),"'214,381,484,542,634'","Young leaves,Young unfolded leaves","2022-03-10; change in wording to clarify leaf base must be visible where it attached to petiole or stem, rather than petiole visible where it is attached to stem. 3-10-2015; minor addition in wording for clarity. 2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options."
+485,Young needles (conifers),"'219,383,485'","Young needles,Young unfolded needles","2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options."
+486,Young needles (pines),"'249,384,486'","Young needles,Young unfolded needles","2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion, and changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options."
+487,Needles (deciduous),"'260,385,487'","Needles,Unfolded needles","2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion, and changed from 'in at least 3 locations' on plant to 'one or more' and added percentage options for canopy fullness."
+488,Leaves (forbs),"'199,386,488'","Leaves,Unfolded leaves",2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion.
+489,Leaves (grasses),"'224,387,489'","Leaves,Unfolded leaves",2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion.
+490,Pollen cones (conifers),"'388,490'",Pollen cones,2-28-2012; slight changes in wording for clarity.
+491,Recent cone or seed drop,"'394,491'","Recent cone or seed drop,Recent seed cone drop",2-28-2012; slight changes in wording for clarity.
+492,Initial growth (grasses/sedges),"'223,396,492,547'","Initial growth,Emerging growth",2-11-2016; minor addition in wording to include regreening of dried stems or leaves. 2-28-2012; slight changes in wording for clarity. 3-21-2011; changed terminology from 'emerging' for clarity.
+493,Flower heads (grasses/sedges),"'397,493,546'",Flower heads,2-11-2016; minor addition in wording for clarity. 2-28-2012; slight changes in wording for clarity.
+494,Open flowers (grasses/sedges),"'226,398,494'",Open flowers,2-28-2012; slight changes in wording for clarity. 3-21-2011; changes in wording for clarity.
+495,Open pollen cones (conifers),"'399,495'",Open pollen cones,2-28-2012; slight changes in wording for clarity.
+496,Emerging needles (pines),"'248,465,496'",Emerging needles,2-28-2012; slight changes in wording for clarity. 3-21-2011; changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options.
+497,Leaves (sedges),"'439,466,497'","Leaves,Unfolded leaves",2-28-2012; slight changes in wording for clarity. 3-21-2011; removed 'unfolded' from title to avoid confusion.
+498,Colored leaves,"'469,498,549,568,594,595,596'",Colored leaves,"2-11-2016; addition in wording to clarify inclusion of leaf color due to drought and other stresses. 2-28-2012; slight changes in wording for clarity, and intensity question switched from requesting percentage of green leaves to percentage of colored leaves left on plant. For other Dataset_IDs, phenophase name and definition wording varies."
+499,Colored needles,"'470,499,550'",Colored needles,"2-11-2016; addition in wording to clarify inclusion of leaf color due to drought and other stresses. 2-28-2012; slight changes in wording for clarity, and intensity question switched from requesting percentage of green needles to percentage of colored needles left on plant."
+500,Flowers or flower buds,"'473,500,548,597,598,599'","Flowers or flower buds,Flowers",2-11-2016; addition in wording to clarify non-inclusion of dormant buds. 2-28-2012; slight changes in wording for clarity.
+501,Open flowers,"'185,474,501,538,564,600,601,602'",Open flowers,"2-28-2012; slight changes in wording for clarity. 3-21-2011; changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options. For other Dataset_IDs, phenophase name and definition wording varies."
+502,Pollen release (flowers),"'195,475,502'",Pollen release,2-28-2012; slight changes in wording for clarity. 3-21-2011; changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options.
+503,Pollen release (conifers),"'220,476,503'",Pollen release,2-28-2012; slight changes in wording for clarity. 3-21-2011; changed from 'in at least 3 locations' on plant to 'one or more' and added intensity options.
+504,Recent fruit or seed drop,"'391,478,504,528'","Recent fruit or seed drop,Acorn drop,Recent fruit drop","2-28-2012; slight changes in wording for clarity. 3-21-2011; slight changes in wording for clarity. For other Dataset_IDs, phenophase name and definition wording varies."
+505,Young leaves (forbs),'505',Young leaves,
+506,Caterpillars in tent,'506',Caterpillars in tent,
+507,Subadults,"'507,629'","Subadults,Active subadults",2021-02-01; changed name from 'Active subadults' to 'Subadults' to avoid confusion about what 'active' means.
+508,Initial growth (rushes),'508',Initial growth,
+509,Leaves (rushes),'509',Leaves,
+510,New side branches (rockweed),'510',New side branches,
+511,Receptacles,'511',Receptacles,
+512,Flat receptacles,'512',Flat receptacles,
+513,Smooth inflated receptacles,'513',Smooth inflated receptacles,
+514,Dotted inflated receptacles,'514',Dotted inflated receptacles,
+515,Torn receptacles,'515',Torn receptacles,
+516,Fruits,"'389,477,516,603,604,605'",Fruits,2-28-2012; slight changes in wording for clarity. 3-21-2011; slight changes in wording for clarity.
+517,Nest building (ground-nesting insect),'517',Nest building,
+518,Nest building (bees),'518',Nest building,
+519,Drone cells,'519',Drone cells,
+520,Nest provisioning (pollen),'520',Nest provisioning,
+521,Eggs (nesting insects),'521',Eggs,
+522,Pupae,'522',Pupae,
+523,Dead adults (no roads),'523',Dead adults,
+524,Eggs,'524',Eggs,
+525,Winged adults,'543',Winged adults,
+526,Dead nymphs (no roads),'544',Dead nymphs,
+527,Nest provisioning (insects and seeds),'545',Nest provisioning,
+528,Courtship calling,'551',Courtship calling,
+529,Recent egg laying (on plant),"'556,619'",Recent egg laying,2020-02-17; changed wording to include 'or other surface' to allow for generalization beyond plant surfaces.'
+530,Cast-off skins (nymph),'552',Cast-off skins,
+531,Eggs (on plant),"'553,620'",Eggs,2020-02-17; changed wording to include 'or other surface' to allow for generalization beyond plant surfaces.'
+532,Larvae feeding,'554',Larvae feeding,
+533,Dead larvae,"'555,615'",Dead larvae,2019-02-05;removed phrase about roads.
+539,Downy young (precocial birds),'572',Downy young,
+540,Partially-fledged young (precocial birds),'573',Partially-fledged young,
+541,Fledged young (precocial birds),'574',Fledged young,
+542,Feeding (or foraging),'575',Feeding,
+544,Dormant nymphs,"'578,630'","Dormant nymphs,Inactive nymphs",2021-02-01; changed name from 'Inactive nymphs' to 'Dormant nymphs' for clarity.
+545,Post-dormant nymphs,'579',Post-dormant nymphs,
+546,Crawlers,"'610,625'","Crawlers,Active crawlers",2021-02-01; changed name from 'Active crawlers' to 'Crawlers' to avoid confusion about what 'active' means.
+547,Egg laying,'611',Egg laying,
+548,Egg laying (in soil),'621',Egg laying,
+549,Mating (one on top or end to end),'635',Mating,
