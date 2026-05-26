@@ -231,14 +231,18 @@ glimpse(flr.raw.sums)
 shading <- data.frame(xmins=paste(2016:2025, "1 1"),xmaxes=paste(2016:2025, "6 30"))
 bonusshade <- data.frame(xmins=paste(c(2018,2025), "10 1"),xmaxes=paste(c(2018,2025), "12 31"))
 
+library(scales)
+yearcol <- pal_seq_gradient("#c6dbef", "#08306b")(1:11/11)
+
+
 propFlrData <- ggplot() + 
 	geom_rect(data=shading, aes(xmin=ymd(xmins), xmax=ymd(xmaxes), ymin=-Inf, ymax=Inf), fill="gray90") +
 	geom_rect(data=bonusshade, aes(xmin=ymd(xmins), xmax=ymd(xmaxes), ymin=-Inf, ymax=Inf), fill="slategray2") +
 
-	geom_bar(data=filter(flr.raw.sums, year>=2016), aes(x=ymd(paste(year, month, 14)), y=PropFlr), fill="#33a02c", stat="identity") +
-#	geom_bar(data=filter(flr.raw.sums, year %in% c(2018,2025), quarter==4), aes(x=ymd(paste(year, month, 14)), y=PropFlr), fill=NA, color="black", stat="identity", width=90) +
-	annotate("segment", x=ymd("2018-11-14"), y=0.57, xend=ymd("2018-11-14"), yend=0.37, arrow=arrow(length=unit(3, "mm"), angle=25), color="#ff7f00", linewidth=1) + 
-	annotate("segment", x=ymd("2025-11-14"), y=0.43, xend=ymd("2025-11-14"), yend=0.23, arrow=arrow(length=unit(3, "mm"), angle=25), color="#ff7f00", linewidth=1) + 
+	geom_bar(data=filter(flr.raw.sums, year>=2016), aes(x=ymd(paste(year, month, 14)), y=PropFlr), fill="#364B82", stat="identity") +
+	geom_bar(data=filter(flr.raw.sums, year %in% c(2018,2025), quarter==4), aes(x=ymd(paste(year, month, 14)), y=PropFlr), fill="#ff7f00", stat="identity", width=90) +
+#	annotate("segment", x=ymd("2018-11-14"), y=0.57, xend=ymd("2018-11-14"), yend=0.37, arrow=arrow(length=unit(3, "mm"), angle=25), color="#ff7f00", linewidth=1) + 
+#	annotate("segment", x=ymd("2025-11-14"), y=0.43, xend=ymd("2025-11-14"), yend=0.23, arrow=arrow(length=unit(3, "mm"), angle=25), color="#ff7f00", linewidth=1) + 
 
 
 	labs(x="Date", title="C. Prop. iNaturalist records with flowering observed, by quarter") +

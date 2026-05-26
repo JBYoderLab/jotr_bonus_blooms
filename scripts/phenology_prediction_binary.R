@@ -742,22 +742,30 @@ thresh
 
 # need to figure out 
 
-Qpreds <- rast(paste0("output/models/RIBART_all_year_predictions/RIBART_predicted_flowering_", 2016:2025, ".tiff"))
+Fact <- rast(paste0("output/models/RIBART_all_year_predictions/RIBART_predicted_flowering_", c(2018,2025), ".tiff"))
+tsdm <- st_transform(sdm, crs=crs(Fact))
+Fact_mask <- mask(Fact, tsdm)
 
-tsdm <- st_transform(sdm, crs=crs(Qpreds))
 
-Qpreds.mask <- mask(Qpreds, tsdm)
+Cfact <- tapp(rast(paste0("output/models/RIBART_counterfactual_predictions/RIBART_cf_predicted_flowering_", c(2018,2025), ".tiff")), index=rep(1:8, each=10), fun=mean)
+names(Cfact) <- paste0(rep(c(2018,2025), each=4), "_Q", 1:4)
+Cfact
 
-Qpreds.mask.ln <- cbind(as.data.frame(Qpreds.mask), crds(Qpreds.mask)) |> pivot_longer(1:40, names_to="yrqu", values_to="pred_prFlr") |> rename(lon=x, lat=y) |> mutate(year=gsub("(\\d+)_Q\\d", "\\1", yrqu), quarter=gsub("\\d+_(Q\\d)", "\\1", yrqu))
-glimpse(Qpreds.mask.ln)
+Cfact_mask <- mask(Cfact, tsdm)
 
-# h=530, w=705
+prFlr_ln <- rbind( 
+	cbind(as.data.frame(Fact_mask), crds(Fact_mask)) |> pivot_longer(1:8, names_to="yrqu", values_to="prFlr") |> rename(lon=x, lat=y) |> mutate(year=gsub("(\\d+)_Q\\d", "\\1", yrqu), quarter=gsub("\\d+_(Q\\d)", "\\1", yrqu), Flr = prFlr>thresh, mod="Factual"),
+	cbind(as.data.frame(Cfact_mask), crds(Cfact_mask)) |> pivot_longer(1:8, names_to="yrqu", values_to="prFlr") |> rename(lon=x, lat=y) |> mutate(year=gsub("(\\d+)_Q\\d", "\\1", yrqu), quarter=gsub("\\d+_(Q\\d)", "\\1", yrqu), Flr = prFlr>thresh, mod="Counterfactual")
+	) |> mutate(mod=factor(mod, c("Factual", "Counterfactual")))
 
-{cairo_pdf(paste("output/figures/predicted_distribution_quarterly_", taxnum, ".pdf", sep=""), width=14, height=5.7)
+glimpse(prFlr_ln)
+
+
+{cairo_pdf("output/figures/SI_predicted_anomaly_factual_counterfactual.pdf", width=6.5, height=6)
 
 ggplot() + 
 
-#geom_sf(data=coast, color="slategray2", linewidth=3) + 
+geom_sf(data=coast, color="slategray2", linewidth=2) + 
 geom_sf(data=countries, fill="antiquewhite3", color="antiquewhite4") + 
 geom_sf(data=states, fill="antiquewhite2", color="antiquewhite3") + 
 #geom_sf(data=filter(states, name=="California"), fill="cornsilk3", color="antiquewhite4") + 
@@ -766,11 +774,11 @@ geom_sf(data=states, fill="antiquewhite2", color="antiquewhite3") +
 
 #geom_text(data=filter(statelabs, state!="UT"), aes(label=state, x=lon, y=lat), color="white", size=20, alpha=0.75) +
 
-geom_tile(data=Qpreds.mask.ln, aes(x=lon, y=lat, fill=pred_prFlr>thresh)) + 
+geom_tile(data=filter(prFlr_ln, quarter=="Q4"), aes(x=lon, y=lat, fill=Flr)) + 
 
 #geom_sf(data=states, fill=NA, color="antiquewhite3") + 
 		
-facet_grid(quarter~year, switch="y") +
+facet_grid(year~mod) +
 
 scale_fill_manual(values=c("#7fbc41", "#762a83"), name="Flowering observed") + 
 labs(x="Longitude", y="Latitude") + 
